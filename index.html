@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portal Docente · Universidad Regional de Guatemala</title>
+<meta name="description" content="Consulta de horarios y guías programáticas para docentes — Universidad Regional de Guatemala, Sede Santa Lucía Cotzumalguapa.">
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --azul:#1B4A8A; --azul-osc:#123563; --azul-claro:#E8EFF9;
+  --naranja:#C8622D; --naranja-claro:#FBEEE6;
+  --gris:#98A2B3; --texto:#1D2939; --texto-sec:#475467;
+  --fondo:#F5F7FA; --blanco:#FFFFFF; --borde:#E4E7EC;
+  --sombra:0 1px 3px rgba(16,24,40,.08),0 8px 24px rgba(16,24,40,.06);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--fondo);color:var(--texto);min-height:100vh}
+
+/* ---------- PANTALLA DE ACCESO ---------- */
+.login-wrap{min-height:100vh;display:flex;align-items:stretch}
+.login-side{flex:1.1;background:linear-gradient(160deg,var(--azul-osc) 0%,var(--azul) 55%,#2A62AC 100%);color:#fff;display:flex;flex-direction:column;justify-content:center;padding:64px;position:relative;overflow:hidden}
+.login-side::after{content:'';position:absolute;width:520px;height:520px;border-radius:50%;border:70px solid rgba(255,255,255,.05);right:-180px;bottom:-180px}
+.login-side::before{content:'';position:absolute;width:300px;height:300px;border-radius:50%;border:50px solid rgba(255,255,255,.05);left:-120px;top:-100px}
+.login-side h1{font-size:clamp(26px,3.2vw,40px);font-weight:800;line-height:1.15;margin-bottom:16px}
+.login-side p{font-size:16px;opacity:.85;max-width:420px;line-height:1.6}
+.badge-ciclo{display:inline-block;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);padding:6px 14px;border-radius:999px;font-size:13px;font-weight:600;letter-spacing:.4px;margin-bottom:22px;align-self:flex-start}
+.login-form{flex:1;display:flex;align-items:center;justify-content:center;padding:40px 24px;background:var(--blanco)}
+.card-login{width:100%;max-width:400px}
+.card-login img{height:74px;margin-bottom:26px}
+.card-login h2{font-size:22px;font-weight:700;margin-bottom:6px}
+.card-login .sub{color:var(--texto-sec);font-size:14.5px;margin-bottom:26px}
+label{display:block;font-size:13.5px;font-weight:600;margin-bottom:7px;color:var(--texto)}
+.input-col{width:100%;padding:13px 16px;font-size:16px;font-family:inherit;border:1.5px solid var(--borde);border-radius:10px;outline:none;transition:border .15s, box-shadow .15s}
+.input-col:focus{border-color:var(--azul);box-shadow:0 0 0 4px var(--azul-claro)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;width:100%;margin-top:16px;padding:13px 18px;font-size:15.5px;font-weight:600;font-family:inherit;color:#fff;background:var(--azul);border:none;border-radius:10px;cursor:pointer;transition:background .15s,transform .05s}
+.btn:hover{background:var(--azul-osc)}
+.btn:active{transform:scale(.99)}
+.error-msg{display:none;margin-top:14px;padding:11px 14px;background:#FEF3F2;border:1px solid #FECDCA;color:#B42318;border-radius:10px;font-size:13.5px}
+.login-foot{margin-top:34px;font-size:12.5px;color:var(--gris);text-align:center}
+
+/* ---------- PORTAL ---------- */
+header.portal{background:var(--blanco);border-bottom:1px solid var(--borde);position:sticky;top:0;z-index:10}
+.header-in{max-width:1080px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;gap:14px}
+.header-in img{height:44px}
+.header-tit{font-size:15px;font-weight:700;color:var(--azul);line-height:1.2}
+.header-tit small{display:block;font-weight:500;color:var(--texto-sec);font-size:11.5px;letter-spacing:.3px}
+.btn-salir{margin-left:auto;padding:8px 16px;font-size:13.5px;font-weight:600;font-family:inherit;color:var(--texto-sec);background:transparent;border:1.5px solid var(--borde);border-radius:9px;cursor:pointer;transition:.15s}
+.btn-salir:hover{border-color:var(--azul);color:var(--azul)}
+main{max-width:1080px;margin:0 auto;padding:30px 20px 60px}
+
+.hero{background:linear-gradient(135deg,var(--azul-osc),var(--azul) 70%,#2A62AC);border-radius:18px;color:#fff;padding:30px 32px;display:flex;flex-wrap:wrap;gap:20px;align-items:center;box-shadow:var(--sombra);position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;width:260px;height:260px;border-radius:50%;border:44px solid rgba(255,255,255,.06);right:-80px;top:-80px}
+.avatar{width:62px;height:62px;border-radius:50%;background:rgba(255,255,255,.16);border:2px solid rgba(255,255,255,.4);display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:700;flex-shrink:0}
+.hero h2{font-size:clamp(19px,2.6vw,26px);font-weight:800}
+.hero .prof{font-size:14px;opacity:.85;margin-top:3px}
+.hero .col-num{font-size:12.5px;opacity:.75;margin-top:6px;letter-spacing:.3px}
+.hero-actions{margin-left:auto;display:flex;gap:10px;flex-wrap:wrap;position:relative;z-index:1}
+.btn-drive{display:inline-flex;align-items:center;gap:9px;padding:12px 20px;background:var(--naranja);color:#fff;font-weight:600;font-size:14.5px;border:none;border-radius:10px;cursor:pointer;text-decoration:none;font-family:inherit;transition:.15s;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.btn-drive:hover{background:#A94F20}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;background:rgba(255,255,255,.12);color:#fff;font-weight:600;font-size:14.5px;border:1.5px solid rgba(255,255,255,.35);border-radius:10px;cursor:pointer;font-family:inherit;transition:.15s}
+.btn-ghost:hover{background:rgba(255,255,255,.22)}
+
+.dias{display:flex;gap:10px;margin:28px 0 6px}
+.chip-dia{padding:10px 22px;font-size:14.5px;font-weight:600;font-family:inherit;border-radius:999px;border:1.5px solid var(--borde);background:var(--blanco);color:var(--texto-sec);cursor:pointer;transition:.15s}
+.chip-dia.on{background:var(--azul);border-color:var(--azul);color:#fff;box-shadow:0 3px 10px rgba(27,74,138,.3)}
+.chip-dia:disabled{opacity:.45;cursor:not-allowed}
+.dia-info{font-size:13px;color:var(--texto-sec);margin:4px 2px 18px}
+
+/* Lista vertical de cursos, en orden de hora */
+.grid-cursos{display:flex;flex-direction:column;margin-top:14px}
+.curso{position:relative;background:var(--blanco);border:1px solid var(--borde);border-radius:14px;padding:18px 22px;box-shadow:var(--sombra);display:flex;gap:20px;align-items:center;margin-bottom:12px;transition:transform .15s,box-shadow .15s;animation:up .35s ease both}
+.curso:hover{transform:translateX(4px);box-shadow:0 4px 6px rgba(16,24,40,.05),0 14px 34px rgba(16,24,40,.1)}
+@keyframes up{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.paso{width:34px;height:34px;border-radius:50%;background:var(--azul);color:#fff;font-size:15px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.bloque-hora{width:150px;flex-shrink:0;border-right:2px solid var(--borde);padding-right:18px}
+.hora{display:block;color:var(--azul);font-size:16px;font-weight:800;line-height:1.3}
+.hora-fin{display:block;color:var(--texto-sec);font-size:13px;font-weight:500;margin-top:2px}
+.hora.virtual{color:var(--naranja);font-size:14px}
+.curso h3{font-size:17px;font-weight:700;line-height:1.35}
+.grupo{font-size:14px;color:var(--texto-sec);display:flex;gap:7px;align-items:flex-start;line-height:1.45;margin-top:5px}
+.vacio{background:var(--blanco);border:1.5px dashed var(--borde);border-radius:14px;padding:40px;text-align:center;color:var(--texto-sec);font-size:14.5px}
+
+footer{border-top:1px solid var(--borde);padding:22px;text-align:center;font-size:12.5px;color:var(--gris);background:var(--blanco)}
+
+.hidden{display:none!important}
+@media(max-width:760px){
+  .login-side{display:none}
+  .hero{padding:24px 22px}
+  .hero-actions{margin-left:0;width:100%}
+  .btn-drive,.btn-ghost{flex:1;justify-content:center}
+}
+@media(max-width:560px){
+  .curso{flex-wrap:wrap;gap:12px;padding:16px 18px}
+  .bloque-hora{width:auto;border-right:none;padding-right:0}
+  .hora,.hora-fin{display:inline}
+  .hora-fin::before{content:' — '}
+}
+@media print{
+  header.portal,.dias,.hero-actions,.btn-salir,footer,.dia-info{display:none!important}
+  body{background:#fff}
+  .hero{background:none;color:#000;box-shadow:none;border:1px solid #ccc;border-radius:8px}
+  .hero::after{display:none}
+  .avatar{display:none}
+  .curso{box-shadow:none;break-inside:avoid}
+  .paso{background:#333}
+  main{max-width:100%;padding:10px}
+  .print-title{display:block!important;font-size:14px;font-weight:700;margin-bottom:12px}
+}
+.print-title{display:none}
+</style>
+</head>
+<body>
+
+<!-- ===== ACCESO ===== -->
+<div id="vista-login" class="login-wrap">
+  <div class="login-side">
+    <span class="badge-ciclo">CICLO 2 · 2026</span>
+    <h1>Portal Docente<br>Universidad Regional<br>de Guatemala</h1>
+    <p>Consulte su horario de clases de fin de semana y acceda a las guías programáticas de sus cursos. Sede Académica Santa Lucía Cotzumalguapa.</p>
+  </div>
+  <div class="login-form">
+    <div class="card-login">
+      <img src="logo.png" alt="Universidad Regional de Guatemala">
+      <h2>Bienvenido(a), docente</h2>
+      <p class="sub">Ingrese su número de colegiado para consultar su horario y guías de curso.</p>
+      <form id="form-login" autocomplete="off">
+        <label for="colegiado">Número de colegiado</label>
+        <input class="input-col" id="colegiado" inputmode="numeric" placeholder="Ej. 12345" required>
+        <button class="btn" type="submit">Consultar mi información
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+        <div class="error-msg" id="err">No se encontró ningún docente con ese número de colegiado. Verifique e intente de nuevo, o comuníquese con Coordinación Académica.</div>
+      </form>
+      <p class="login-foot">Universidad Regional de Guatemala · Región 2<br>Sede Santa Lucía Cotzumalguapa</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== PORTAL ===== -->
+<div id="vista-portal" class="hidden">
+  <header class="portal">
+    <div class="header-in">
+      <img src="logo.png" alt="Universidad Regional de Guatemala">
+      <div class="header-tit">Portal Docente<small>CICLO 2 · 2026 — SEDE SANTA LUCÍA COTZUMALGUAPA</small></div>
+      <button class="btn-salir" onclick="salir()">Cerrar sesión</button>
+    </div>
+  </header>
+  <main>
+    <div class="print-title">Universidad Regional de Guatemala — Horario Ciclo 2-2026</div>
+    <section class="hero">
+      <div class="avatar" id="avatar"></div>
+      <div>
+        <h2 id="p-nombre"></h2>
+        <div class="prof" id="p-prof"></div>
+        <div class="col-num" id="p-col"></div>
+      </div>
+      <div class="hero-actions">
+        <a class="btn-drive" id="btn-drive" target="_blank" rel="noopener">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+          Ver mis guías
+        </a>
+        <button class="btn-ghost" onclick="window.print()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v8H6z"/></svg>
+          Imprimir horario
+        </button>
+      </div>
+    </section>
+
+    <div class="dias">
+      <button class="chip-dia" id="chip-sab" onclick="verDia('sabado')">Sábado</button>
+      <button class="chip-dia" id="chip-dom" onclick="verDia('domingo')">Domingo</button>
+    </div>
+    <div class="dia-info" id="dia-info"></div>
+    <div class="grid-cursos" id="cursos"></div>
+  </main>
+  <footer>Universidad Regional de Guatemala · Región 2 · Sede Académica Santa Lucía Cotzumalguapa · Ciclo 2-2026</footer>
+</div>
+
+<script src="datos.js"></script>
+<script>
+let docente = null;
+
+function buscar(col){
+  col = String(col).trim().replace(/^0+(?=\d)/,'');
+  return DOCENTES.find(d => d.colegiado === col) || null;
+}
+
+document.getElementById('form-login').addEventListener('submit', e => {
+  e.preventDefault();
+  const d = buscar(document.getElementById('colegiado').value);
+  const err = document.getElementById('err');
+  if(!d){ err.style.display = 'block'; return; }
+  err.style.display = 'none';
+  entrar(d);
+});
+
+function entrar(d){
+  docente = d;
+  document.getElementById('vista-login').classList.add('hidden');
+  document.getElementById('vista-portal').classList.remove('hidden');
+  document.getElementById('p-nombre').textContent = d.nombre;
+  document.getElementById('p-prof').textContent = d.profesion || '';
+  document.getElementById('p-col').textContent = 'Colegiado No. ' + d.colegiado;
+  document.getElementById('avatar').textContent = iniciales(d.nombre);
+  const bd = document.getElementById('btn-drive');
+  if(d.drive){ bd.href = d.drive; bd.style.display = 'inline-flex'; }
+  else { bd.removeAttribute('href'); bd.style.display = 'none'; }
+  const tieneSab = d.sabado.length > 0, tieneDom = d.domingo.length > 0;
+  document.getElementById('chip-sab').disabled = !tieneSab;
+  document.getElementById('chip-dom').disabled = !tieneDom;
+  verDia(tieneSab ? 'sabado' : 'domingo');
+  window.scrollTo(0,0);
+}
+
+function iniciales(n){
+  const p = n.replace(/^(Lcda?\.|Lic\.|Ing\.|Dra?\.|Inga\.)\s*/i,'').split(/\s+/);
+  return (p[0]?.[0]||'') + (p[1]?.[0]||'');
+}
+
+function minutos(h){
+  const m = h.match(/(\d{1,2}):(\d{2})\s*(am|pm)/i);
+  if(!m) return 9999; // "Fuera de horario / Virtual" al final
+  let hh = parseInt(m[1]) % 12;
+  if(m[3].toLowerCase() === 'pm') hh += 12;
+  return hh*60 + parseInt(m[2]);
+}
+
+function verDia(dia){
+  document.getElementById('chip-sab').classList.toggle('on', dia==='sabado');
+  document.getElementById('chip-dom').classList.toggle('on', dia==='domingo');
+  const lista = [...docente[dia]].sort((a,b) => minutos(a.horario)-minutos(b.horario));
+  const info = document.getElementById('dia-info');
+  const nombreDia = dia === 'sabado' ? 'sábado' : 'domingo';
+  info.textContent = lista.length
+    ? `Sus clases del día ${nombreDia}, en orden:`
+    : '';
+  const cont = document.getElementById('cursos');
+  cont.innerHTML = '';
+  if(!lista.length){
+    cont.innerHTML = `<div class="vacio">No tiene cursos asignados el día ${nombreDia}.</div>`;
+    return;
+  }
+  lista.forEach((c,i) => {
+    const esVirtual = !/\d/.test(c.horario.charAt(0));
+    const partes = c.horario.split(/\s*-\s*/);
+    const horaHtml = esVirtual
+      ? `<span class="hora virtual">${esc(c.horario)}</span>`
+      : `<span class="hora">${esc(partes[0])}</span><span class="hora-fin">a ${esc(partes[1]||'')}</span>`;
+    const el = document.createElement('article');
+    el.className = 'curso';
+    el.style.animationDelay = (i*45)+'ms';
+    el.innerHTML = `
+      <div class="paso">${i+1}</div>
+      <div class="bloque-hora">${horaHtml}</div>
+      <div>
+        <h3>${esc(c.curso)}</h3>
+        <div class="grupo">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          ${esc(c.grupo)}
+        </div>
+      </div>`;
+    cont.appendChild(el);
+  });
+}
+
+function esc(s){ const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+
+function salir(){
+  docente = null;
+  document.getElementById('vista-portal').classList.add('hidden');
+  document.getElementById('vista-login').classList.remove('hidden');
+  document.getElementById('colegiado').value = '';
+}
+</script>
+</body>
+</html>
