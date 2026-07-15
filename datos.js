@@ -158,11 +158,6 @@ const DOCENTES = [
   "sabado": [],
   "domingo": [
    {
-    "horario": "7:00 am - 8:30 am",
-    "curso": "Administración Financiera",
-    "grupo": "Ingeniería Industrial 6to semestre"
-   },
-   {
     "horario": "10:30 am - 12:00 pm",
     "curso": "Estadística I",
     "grupo": "Ingeniería Agrícola 2do semestre"
@@ -370,11 +365,6 @@ const DOCENTES = [
     "horario": "8:30 am - 10:00 am",
     "curso": "Economía",
     "grupo": "Psicología Industrial 2do semestre / Psicología Clínica 2do semestre"
-   },
-   {
-    "horario": "12:00 pm - 1:30 pm",
-    "curso": "Administración Financiera",
-    "grupo": "Ingeniería Industrial 6to semestre"
    },
    {
     "horario": "2:30 pm - 4:00 pm",
@@ -1779,6 +1769,11 @@ const DOCENTES = [
     "horario": "8:30 am - 10:00 am",
     "curso": "Marketing Digital",
     "grupo": "Administración de Sistemas Informáticos 8vo semestre"
+   },
+   {
+    "horario": "12:00 pm - 1:30 pm",
+    "curso": "Administración Financiera",
+    "grupo": "Ingeniería Industrial 6to semestre"
    }
   ],
   "domingo": [
@@ -1786,6 +1781,11 @@ const DOCENTES = [
     "horario": "4:00 pm - 5:30 pm",
     "curso": "Presupuesto y Finanzas",
     "grupo": "Administración de Sistemas Informáticos 6to semestre"
+   },
+   {
+    "horario": "7:00 am - 8:30 am",
+    "curso": "Administración Financiera",
+    "grupo": "Ingeniería Industrial 6to semestre"
    }
   ]
  },
