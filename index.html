@@ -81,6 +81,7 @@ main{max-width:1080px;margin:0 auto;padding:30px 20px 60px}
 .hora-fin{display:block;color:var(--texto-sec);font-size:13px;font-weight:500;margin-top:2px}
 .hora.virtual{color:var(--naranja);font-size:14px}
 .curso h3{font-size:17px;font-weight:700;line-height:1.35}
+.tag-virtual{display:inline-flex;align-items:center;gap:5px;background:var(--naranja-claro);color:var(--naranja);border:1px solid var(--naranja);font-size:11.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;padding:3px 10px;border-radius:999px;margin-left:8px;vertical-align:middle}
 .grupo{font-size:14px;color:var(--texto-sec);display:flex;gap:7px;align-items:flex-start;line-height:1.45;margin-top:5px}
 .vacio{background:var(--blanco);border:1.5px dashed var(--borde);border-radius:14px;padding:40px;text-align:center;color:var(--texto-sec);font-size:14.5px}
 
@@ -257,7 +258,7 @@ function verDia(dia){
       <div class="paso">${i+1}</div>
       <div class="bloque-hora">${horaHtml}</div>
       <div>
-        <h3>${esc(c.curso)}</h3>
+        <h3>${esc(c.curso)}${c.virtual ? ' <span class="tag-virtual">Curso virtual</span>' : ''}</h3>
         <div class="grupo">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           ${esc(c.grupo)}

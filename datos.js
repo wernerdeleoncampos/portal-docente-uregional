@@ -299,7 +299,8 @@ const DOCENTES = [
    {
     "horario": "2:30 pm - 4:00 pm",
     "curso": "Gestión de Empresas de Desarrollo Tecnológico",
-    "grupo": "Administración de Sistemas Informáticos 10mo semestre"
+    "grupo": "Administración de Sistemas Informáticos 10mo semestre",
+    "virtual": true
    }
   ],
   "domingo": []
@@ -1184,12 +1185,14 @@ const DOCENTES = [
    {
     "horario": "12:00 pm - 1:30 pm",
     "curso": "Seguridad y Auditoría de Sistemas",
-    "grupo": "Administración de Sistemas Informáticos 10mo semestre"
+    "grupo": "Administración de Sistemas Informáticos 10mo semestre",
+    "virtual": true
    },
    {
     "horario": "4:00 pm - 5:30 pm",
     "curso": "Base de Datos Avanzados",
-    "grupo": "Administración de Sistemas Informáticos 8vo semestre"
+    "grupo": "Administración de Sistemas Informáticos 8vo semestre",
+    "virtual": true
    }
   ],
   "domingo": []
@@ -1209,14 +1212,16 @@ const DOCENTES = [
    {
     "horario": "12:00 pm - 1:30 pm",
     "curso": "Emprendimiento de Negocios Tecnológicos",
-    "grupo": "Administración de Sistemas Informáticos 8vo semestre"
+    "grupo": "Administración de Sistemas Informáticos 8vo semestre",
+    "virtual": true
    }
   ],
   "domingo": [
    {
     "horario": "10:30 am - 12:00 pm",
     "curso": "Administración IV",
-    "grupo": "Administración de Sistemas Informáticos 6to semestre"
+    "grupo": "Administración de Sistemas Informáticos 6to semestre",
+    "virtual": true
    }
   ]
  },
@@ -1358,12 +1363,14 @@ const DOCENTES = [
    {
     "horario": "12:00 pm - 1:30 pm",
     "curso": "Base de Datos II",
-    "grupo": "Administración de Sistemas Informáticos 6to semestre"
+    "grupo": "Administración de Sistemas Informáticos 6to semestre",
+    "virtual": true
    },
    {
     "horario": "2:30 pm - 4:00 pm",
     "curso": "Programación Web",
-    "grupo": "Administración de Sistemas Informáticos 6to semestre"
+    "grupo": "Administración de Sistemas Informáticos 6to semestre",
+    "virtual": true
    }
   ]
  },
@@ -1582,14 +1589,16 @@ const DOCENTES = [
    {
     "horario": "10:30 am - 12:00 pm",
     "curso": "Ingeniería de Software",
-    "grupo": "Administración de Sistemas Informáticos 8vo semestre"
+    "grupo": "Administración de Sistemas Informáticos 8vo semestre",
+    "virtual": true
    }
   ],
   "domingo": [
    {
     "horario": "Fuera de horario / Virtual",
     "curso": "Práctica de Administración de Sistemas de Información",
-    "grupo": "Administración de Sistemas Informáticos 6to semestre"
+    "grupo": "Administración de Sistemas Informáticos 6to semestre",
+    "virtual": true
    }
   ]
  },
@@ -1688,7 +1697,8 @@ const DOCENTES = [
    {
     "horario": "4:00 pm - 5:30 pm",
     "curso": "Comercio Electrónico",
-    "grupo": "Administración de Sistemas Informáticos 10mo semestre"
+    "grupo": "Administración de Sistemas Informáticos 10mo semestre",
+    "virtual": true
    }
   ],
   "domingo": []
@@ -1703,12 +1713,14 @@ const DOCENTES = [
    {
     "horario": "8:30 am - 10:00 am",
     "curso": "Internet de las Cosas y Computación en la Nube",
-    "grupo": "Administración de Sistemas Informáticos 10mo semestre"
+    "grupo": "Administración de Sistemas Informáticos 10mo semestre",
+    "virtual": true
    },
    {
     "horario": "2:30 pm - 4:00 pm",
     "curso": "Desarrollo de Aplicaciones Móviles",
-    "grupo": "Administración de Sistemas Informáticos 8vo semestre"
+    "grupo": "Administración de Sistemas Informáticos 8vo semestre",
+    "virtual": true
    }
   ],
   "domingo": []
@@ -1768,7 +1780,8 @@ const DOCENTES = [
    {
     "horario": "8:30 am - 10:00 am",
     "curso": "Marketing Digital",
-    "grupo": "Administración de Sistemas Informáticos 8vo semestre"
+    "grupo": "Administración de Sistemas Informáticos 8vo semestre",
+    "virtual": true
    },
    {
     "horario": "12:00 pm - 1:30 pm",
@@ -1780,7 +1793,8 @@ const DOCENTES = [
    {
     "horario": "4:00 pm - 5:30 pm",
     "curso": "Presupuesto y Finanzas",
-    "grupo": "Administración de Sistemas Informáticos 6to semestre"
+    "grupo": "Administración de Sistemas Informáticos 6to semestre",
+    "virtual": true
    },
    {
     "horario": "7:00 am - 8:30 am",
@@ -1880,7 +1894,8 @@ const DOCENTES = [
    {
     "horario": "10:30 am - 12:00 pm",
     "curso": "Seminario de Tesis",
-    "grupo": "Administración de Sistemas Informáticos 10mo semestre"
+    "grupo": "Administración de Sistemas Informáticos 10mo semestre",
+    "virtual": true
    },
    {
     "horario": "12:00 pm - 1:30 pm",
