@@ -1058,7 +1058,7 @@ const DOCENTES = [
    {
     "horario": "12:00 pm - 1:30 pm",
     "curso": "Termodinámica",
-    "grupo": "Ingeniería Industrial 4to semestre A y B"
+    "grupo": "Ingeniería Industrial 4to semestre"
    },
    {
     "horario": "4:00 pm - 5:30 pm",
@@ -1078,12 +1078,12 @@ const DOCENTES = [
    {
     "horario": "4:00 pm - 5:30 pm",
     "curso": "Administración de Procesos",
-    "grupo": "Ingeniería Industrial 4to semestre A y B"
+    "grupo": "Ingeniería Industrial 4to semestre"
    },
    {
     "horario": "Fuera de horario / Virtual",
     "curso": "Gestión y Aseguramiento de Calidad",
-    "grupo": "Ingeniería Industrial 4to semestre A y B"
+    "grupo": "Ingeniería Industrial 4to semestre"
    }
   ]
  },
@@ -1134,7 +1134,7 @@ const DOCENTES = [
    {
     "horario": "2:30 pm - 4:00 pm",
     "curso": "Ingeniería Económica",
-    "grupo": "Ingeniería Industrial 4to semestre A y B"
+    "grupo": "Ingeniería Industrial 4to semestre"
    }
   ]
  },
@@ -1170,7 +1170,7 @@ const DOCENTES = [
    {
     "horario": "8:30 am - 10:00 am",
     "curso": "Energía, Ambiente y Desarrollo",
-    "grupo": "Ingeniería Industrial 4to semestre A y B"
+    "grupo": "Ingeniería Industrial 4to semestre"
    },
    {
     "horario": "10:30 am - 12:00 pm",
@@ -1251,7 +1251,7 @@ const DOCENTES = [
    {
     "horario": "7:00 am - 8:30 am",
     "curso": "Cálculo II",
-    "grupo": "Ingeniería Industrial 4to semestre A y B"
+    "grupo": "Ingeniería Industrial 4to semestre"
    },
    {
     "horario": "8:30 am - 10:00 am",
@@ -1551,7 +1551,7 @@ const DOCENTES = [
    {
     "horario": "10:30 am - 12:00 pm",
     "curso": "Instalación y Mantenimiento Industrial",
-    "grupo": "Ingeniería Industrial 4to semestre A y B"
+    "grupo": "Ingeniería Industrial 4to semestre"
    },
    {
     "horario": "12:00 pm - 1:30 pm",
