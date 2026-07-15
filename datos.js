@@ -1222,7 +1222,13 @@ const DOCENTES = [
     "grupo": "Administración de Sistemas Informáticos 8vo semestre"
    }
   ],
-  "domingo": []
+  "domingo": [
+   {
+    "horario": "10:30 am - 12:00 pm",
+    "curso": "Administración IV",
+    "grupo": "Administración de Sistemas Informáticos 6to semestre"
+   }
+  ]
  },
  {
   "colegiado": "24566",
@@ -1358,7 +1364,18 @@ const DOCENTES = [
     "grupo": "Administración de Sistemas Informáticos 4to semestre"
    }
   ],
-  "domingo": []
+  "domingo": [
+   {
+    "horario": "12:00 pm - 1:30 pm",
+    "curso": "Base de Datos II",
+    "grupo": "Administración de Sistemas Informáticos 6to semestre"
+   },
+   {
+    "horario": "2:30 pm - 4:00 pm",
+    "curso": "Programación Web",
+    "grupo": "Administración de Sistemas Informáticos 6to semestre"
+   }
+  ]
  },
  {
   "colegiado": "14894",
@@ -1578,7 +1595,13 @@ const DOCENTES = [
     "grupo": "Administración de Sistemas Informáticos 8vo semestre"
    }
   ],
-  "domingo": []
+  "domingo": [
+   {
+    "horario": "Fuera de horario / Virtual",
+    "curso": "Práctica de Administración de Sistemas de Información",
+    "grupo": "Administración de Sistemas Informáticos 6to semestre"
+   }
+  ]
  },
  {
   "colegiado": "26861",
@@ -1758,7 +1781,13 @@ const DOCENTES = [
     "grupo": "Administración de Sistemas Informáticos 8vo semestre"
    }
   ],
-  "domingo": []
+  "domingo": [
+   {
+    "horario": "4:00 pm - 5:30 pm",
+    "curso": "Presupuesto y Finanzas",
+    "grupo": "Administración de Sistemas Informáticos 6to semestre"
+   }
+  ]
  },
  {
   "colegiado": "4677",
